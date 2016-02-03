@@ -1,7 +1,7 @@
 {
   "name": "nprocess",
   "description": "",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "nprocess.js",
   "devDependencies": {
     "chai": "*",
