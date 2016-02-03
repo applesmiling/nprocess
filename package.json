@@ -1,7 +1,7 @@
 {
   "name": "nprocess",
-  "description": "",
-  "version": "1.0.0",
+  "description": "run unix command in nodejs",
+  "version": "1.0.2",
   "main": "nprocess.js",
   "devDependencies": {
     "chai": "*",
