@@ -51,8 +51,7 @@ function callScript(processArgs){
 }
 
 function run (command){
-  var processArgs = command.split(' ')
-  return callScript(processArgs)
+  return callScript(command)
 }
 
 function runMulti (commands){
