@@ -31,7 +31,7 @@ function callScript(processArgs){
     var realArgs = processArgs.slice(0)
     var cmdStr = realArgs[0]
     var cmdArgs = realArgs.slice(1)
-    var instance = new MProcess(cmdStr, cmdArgs, MProcess.SPAWN, { cwd : __dirname })
+    var instance = new MProcess(cmdStr, cmdArgs, MProcess.SPAWN, { cwd : '' })
     instance.run()
     instance
       .getProcess()
@@ -51,8 +51,7 @@ function callScript(processArgs){
 }
 
 function run (command){
-  var processArgs = command.split(' ')
-  return callScript(processArgs)
+  return callScript(command)
 }
 
 function runMulti (commands){

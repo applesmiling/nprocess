@@ -19,7 +19,7 @@ npm install --save nprocess
 ```js
 var nprocess = require('../nprocess')
 nprocess
-  .run('echo something')
+  .run(['echo', something'])
   .then(console.log)
 // 'something'
 ```
@@ -29,9 +29,9 @@ nprocess
 ```js
 var nprocess = require('../nprocess')
 var commands = [
-  "echo hey",
-  "echo ho",
-  "echo let's go",
+  ["echo", "hey"],
+  ["echo", "ho"],
+  ["echo", "let's go"],
 ]
 return nprocess
   .runMulti(commands)
