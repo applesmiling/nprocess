@@ -1,0 +1,13 @@
+{
+  "name": "nprocess",
+  "description": "",
+  "version": "0.0.0",
+  "main": "nprocess.js",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha --no-colors --reporter spec"
+  }
+}
