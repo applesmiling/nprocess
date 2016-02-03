@@ -15,9 +15,7 @@ var underscore = require("underscore")
  * Module exports
  */
 
-
 function callScript(processArgs){
-
   return new Promise(function(resolve,reject){
     var code = null
     var output = "" 
@@ -53,16 +51,28 @@ function callScript(processArgs){
 }
 
 function run (command){
-	var processArgs = command.split(' ')
+  var processArgs = command.split(' ')
   return callScript(processArgs)
+}
+
+function runMulti (commands){
+  var proms = commands
+    .map(function (command) {
+      return run(command)
+    })
+  return Promise.all(proms)
 }
 
 
 ThrottleInstance.registerFunction("run", run)
+ThrottleInstance.registerFunction("runMulti", runMulti)
 module.exports = {
-  run: function(str) {
-    return ThrottleInstance.registerAction("run",[str])
+  run: function (str) {
+    return ThrottleInstance.registerAction("run", [str])
   },
+  runMulti: function (str) {
+    return ThrottleInstance.registerAction("runMulti", [str])
+  }, 
 }
 
 /**
